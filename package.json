@@ -1,0 +1,15 @@
+{
+  "name": "file-upload",
+  "version": "1.0.0",
+  "description": "Testing File Upload JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon --watch app.js --watch ./src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
