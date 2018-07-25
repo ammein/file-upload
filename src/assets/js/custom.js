@@ -1,7 +1,7 @@
 /// <reference path="../js/dropzone.js" />
 // DOM Ready
 $(function(){
-    var myDropzone = new Dropzone("form#uploadForm" , {url : '/fileupload'});
+    var myDropzone = new Dropzone("form");
 
     Dropzone.options.myDropzone = {
         paramName : 'fileName',
