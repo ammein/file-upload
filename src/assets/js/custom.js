@@ -1,5 +1,7 @@
 /// <reference path="../js/dropzone.js" />
 // DOM Ready
+
+
 $(function(){
     // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
     console.log("I started");
@@ -19,16 +21,34 @@ $(function(){
     });
 
     myDropzone.on("addedfile", function (file) {
-        var overlay = $('div.overlay');
-        overlay.insertBefore($('preview-outer'));
+        var div = document.createElement('div');
+        $(div).addClass('overlay');
+        $(div).insertBefore($('div.preview-outer'));
         $('div.preview-outer').css('display' , 'initial');
-
-        $('button[data-dz-remove].cancel').on('click', function () {
+        file.previewElement.querySelector(".cancel").onclick = function () {
+            // To override inline style
+            $('div.preview-outer').removeAttr('style');
             $('div.preview-outer').css({
                 display: 'none !important'
             });
-            return false;
-        });
+            // To remove all Overlay
+            document.querySelectorAll('.overlay').forEach((item)=>{
+                $(item).remove();
+            })
+            console.log("Clicked to remove");
+        };
+
+        file.previewElement.querySelector(".delete").onclick = function () {
+            // To override inline style
+            $('div.preview-outer').removeAttr('style');
+            $('div.preview-outer').css({
+                display: 'none !important'
+            });
+            document.querySelectorAll('.overlay').forEach((item) => {
+                $(item).remove();
+            })
+            console.log("Clicked to delete");
+        };
         // Hookup the start button
         file.previewElement.querySelector(".start").onclick = function () {
             myDropzone.enqueueFile(file);

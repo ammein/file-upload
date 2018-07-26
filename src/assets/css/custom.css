@@ -44,4 +44,5 @@ html , body {
     height : 100%;
     position: absolute;
     background-color : rgba(0, 0, 0, 0.226);
+    top : 0;
 }
