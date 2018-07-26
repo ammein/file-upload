@@ -25,7 +25,8 @@ $(function(){
         $(div).addClass('overlay');
         $(div).insertBefore($('div.preview-outer'));
         $('div.preview-outer').css('display' , 'initial');
-        // myDropzone.enqueueFile(file);
+        // var htmlElement = "<button type='submit' class='btn btn-primary start'><i class='glyphicon glyphicon-upload'></i><span>Start upload</span></button><button type='reset' class='btn btn-warning cancel'><i class='glyphicon glyphicon-ban-circle'></i><span>Cancel upload</span></button>";
+        // $('div#between').last().append(htmlElement);
         // file.previewElement.querySelector(".cancel").onclick = function () {
         //     // To override inline style
         //     $('div.preview-outer').removeAttr('style');
@@ -51,10 +52,10 @@ $(function(){
         //     console.log("Clicked to delete");
         // };
         // Hookup the start button
-        file.previewElement.querySelector(".start").onclick = function () {
-            myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
-            console.log("File type \n %s" , file);
-        };
+        // file.previewElement.querySelector(".start").onclick = function () {
+        //     myDropzone.enqueueFile(file);
+        //     console.log("File type \n %s" , file);
+        // };
     });
 
     // Update the total progress bar
@@ -77,11 +78,11 @@ $(function(){
     // Setup the buttons for all transfers
     // The "add files" button doesn't need to be setup because the config
     // `clickable` has already been specified.
-    // document.querySelector("#actions .start").onclick = function () {
-    //     myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
-    // };
-    // document.querySelector("#actions .cancel").onclick = function () {
-    //     myDropzone.removeAllFiles(true);
-    // };
+    $("button.start").on("click" , ()=>{
+        myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
+    });
+    $("button.cancel").on("click" , ()=>{
+        myDropzone.removeAllFiles(true);
+    });
 
 });
