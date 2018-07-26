@@ -1,6 +1,8 @@
 /// <reference path="../js/dropzone.js" />
 // DOM Ready
 $(function(){
+
+    console.log("I started");
     var myDropzone = new Dropzone("form");
 
     Dropzone.options.myDropzone = {

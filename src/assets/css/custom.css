@@ -1,0 +1,9 @@
+html , body {
+    height: 100%;
+}
+
+.box-upload{
+    width: 400px;
+    height: 200px;
+    /* border : 1px black dashed; */
+}
