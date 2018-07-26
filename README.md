@@ -9,6 +9,6 @@ npm start
 ### Log File
 
 When you running npm , this will automatically file log in log.txt. To delete , simply :
-```cmd
+```bash
 node app.js delete
 ```
