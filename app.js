@@ -1,10 +1,10 @@
 ///<reference path="./node_modules/body-parser/*"/>
-
 const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 var root = {
     root : './src/views'
 };
@@ -40,6 +40,20 @@ app.use((req,res)=>{
 });
 
 app.listen(port , '0.0.0.0' , function () {
-    console.log("------\t%s\n------\thttp://localhost:%s\n", new Date().toISOString(), port);
-    console.log("Static file on : \n\t%s", staticLocation);
-})
+    var serverUp = `\n\n------\t${new Date().toISOString()}\n------\thttp://localhost:${port}\n`;
+    console.log(serverUp);
+    var staticUp = `Static file on : \n\t${staticLocation}`;
+    console.log(staticUp);
+    fs.appendFile('log.txt' , `${serverUp} \n ${staticUp}` , (err)=>{
+        if(err){
+            throw err;
+        }
+        console.log("File is saved !");
+    })
+});
+
+if(process.argv[2] === 'delete'){
+    fs.writeFile('log.txt' , 'Log deleted' , (err)=>{
+        console.log("Log Deleted");
+    });
+}
