@@ -25,33 +25,34 @@ $(function(){
         $(div).addClass('overlay');
         $(div).insertBefore($('div.preview-outer'));
         $('div.preview-outer').css('display' , 'initial');
-        file.previewElement.querySelector(".cancel").onclick = function () {
-            // To override inline style
-            $('div.preview-outer').removeAttr('style');
-            $('div.preview-outer').css({
-                display: 'none !important'
-            });
-            // To remove all Overlay
-            document.querySelectorAll('.overlay').forEach((item)=>{
-                $(item).remove();
-            })
-            console.log("Clicked to remove");
-        };
+        // myDropzone.enqueueFile(file);
+        // file.previewElement.querySelector(".cancel").onclick = function () {
+        //     // To override inline style
+        //     $('div.preview-outer').removeAttr('style');
+        //     $('div.preview-outer').css({
+        //         display: 'none !important'
+        //     });
+        //     // To remove all Overlay
+        //     document.querySelectorAll('.overlay').forEach((item)=>{
+        //         $(item).remove();
+        //     })
+        //     console.log("Clicked to remove");
+        // };
 
-        file.previewElement.querySelector(".delete").onclick = function () {
-            // To override inline style
-            $('div.preview-outer').removeAttr('style');
-            $('div.preview-outer').css({
-                display: 'none !important'
-            });
-            document.querySelectorAll('.overlay').forEach((item) => {
-                $(item).remove();
-            })
-            console.log("Clicked to delete");
-        };
+        // file.previewElement.querySelector(".delete").onclick = function () {
+        //     // To override inline style
+        //     $('div.preview-outer').removeAttr('style');
+        //     $('div.preview-outer').css({
+        //         display: 'none !important'
+        //     });
+        //     document.querySelectorAll('.overlay').forEach((item) => {
+        //         $(item).remove();
+        //     })
+        //     console.log("Clicked to delete");
+        // };
         // Hookup the start button
         file.previewElement.querySelector(".start").onclick = function () {
-            myDropzone.enqueueFile(file);
+            myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
             console.log("File type \n %s" , file);
         };
     });
@@ -65,7 +66,7 @@ $(function(){
         // Show the total progress bar when upload starts
         document.querySelector("#total-progress").style.opacity = "1";
         // And disable the start button
-        file.previewElement.querySelector(".start").setAttribute("disabled", "disabled");
+        // file.previewElement.querySelector(".start").setAttribute("disabled", "disabled");
     });
 
     // Hide the total progress bar when nothing's uploading anymore
@@ -76,11 +77,11 @@ $(function(){
     // Setup the buttons for all transfers
     // The "add files" button doesn't need to be setup because the config
     // `clickable` has already been specified.
-    document.querySelector("#actions .start").onclick = function () {
-        myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
-    };
-    document.querySelector("#actions .cancel").onclick = function () {
-        myDropzone.removeAllFiles(true);
-    };
+    // document.querySelector("#actions .start").onclick = function () {
+    //     myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
+    // };
+    // document.querySelector("#actions .cancel").onclick = function () {
+    //     myDropzone.removeAllFiles(true);
+    // };
 
 });
