@@ -25,32 +25,6 @@ $(function(){
         $(div).addClass('overlay');
         $(div).insertBefore($('div.preview-outer'));
         $('div.preview-outer').css('display' , 'initial');
-        // var htmlElement = "<button type='submit' class='btn btn-primary start'><i class='glyphicon glyphicon-upload'></i><span>Start upload</span></button><button type='reset' class='btn btn-warning cancel'><i class='glyphicon glyphicon-ban-circle'></i><span>Cancel upload</span></button>";
-        // $('div#between').last().append(htmlElement);
-        // file.previewElement.querySelector(".cancel").onclick = function () {
-        //     // To override inline style
-        //     $('div.preview-outer').removeAttr('style');
-        //     $('div.preview-outer').css({
-        //         display: 'none !important'
-        //     });
-        //     // To remove all Overlay
-        //     document.querySelectorAll('.overlay').forEach((item)=>{
-        //         $(item).remove();
-        //     })
-        //     console.log("Clicked to remove");
-        // };
-
-        // file.previewElement.querySelector(".delete").onclick = function () {
-        //     // To override inline style
-        //     $('div.preview-outer').removeAttr('style');
-        //     $('div.preview-outer').css({
-        //         display: 'none !important'
-        //     });
-        //     document.querySelectorAll('.overlay').forEach((item) => {
-        //         $(item).remove();
-        //     })
-        //     console.log("Clicked to delete");
-        // };
         // Hookup the start button
         // file.previewElement.querySelector(".start").onclick = function () {
         //     myDropzone.enqueueFile(file);
@@ -61,13 +35,23 @@ $(function(){
     // Update the total progress bar
     myDropzone.on("totaluploadprogress", function (progress) {
         document.querySelector("#total-progress .progress-bar").style.width = progress + "%";
+        if(progress == 100){
+            setTimeout(() => {
+                $('div.preview-outer').removeAttr('style');
+                $('div.preview-outer').css({
+                    display: 'none !important'
+                });
+                document.querySelectorAll('.overlay').forEach((item) => {
+                    $(item).remove();
+                });
+            }, 2000);
+        }
     });
 
     myDropzone.on("sending", function (file) {
         // Show the total progress bar when upload starts
         document.querySelector("#total-progress").style.opacity = "1";
-        // And disable the start button
-        // file.previewElement.querySelector(".start").setAttribute("disabled", "disabled");
+        // To override inline style
     });
 
     // Hide the total progress bar when nothing's uploading anymore
@@ -89,7 +73,7 @@ $(function(){
         });
         document.querySelectorAll('.overlay').forEach((item) => {
             $(item).remove();
-        })
+        });
         myDropzone.removeAllFiles(true);
     });
 
