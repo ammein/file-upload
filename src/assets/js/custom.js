@@ -9,6 +9,7 @@ $(function(){
     previewNode.id = "";
     var previewTemplate = previewNode.parentNode.innerHTML;
     previewNode.parentNode.removeChild(previewNode);
+    var isAnimating = false;
     var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
         url: "/fileupload", // Set the url
         thumbnailWidth: 80,
@@ -30,24 +31,32 @@ $(function(){
         //     myDropzone.enqueueFile(file);
         //     console.log("File type \n %s" , file);
         // };
-    });
 
-    // Update the total progress bar
-    myDropzone.on("totaluploadprogress", function (progress) {
-        document.querySelector("#total-progress .progress-bar").style.width = progress + "%";
-        if(progress == 100){
-            setTimeout(() => {
-                $('div.preview-outer').removeAttr('style');
-                $('div.preview-outer').css({
-                    display: 'none !important'
-                });
-                document.querySelectorAll('.overlay').forEach((item) => {
-                    $(item).remove();
-                });
-            }, 2000);
+        file.previewElement.querySelector('button.delete').onclick = function(file){
+            console.log("Clicked on previewElement");
+            myDropzone.removeFile(file);
         }
     });
 
+    // Update the total progress bar
+    myDropzone.on("uploadprogress", function (progress) {
+        isAnimating = true;
+        document.querySelector("#total-progress .progress-bar").style.width = progress + "%";
+        console.log("Trigger the action");
+        setTimeout(() => {
+            $('div.preview-outer').removeAttr('style');
+            $('div.preview-outer').css({
+                display: 'none !important'
+            });
+            document.querySelectorAll('.overlay').forEach((item) => {
+                $(item).remove();
+            });
+            isAnimating = false;
+        }, 2000);
+    });
+    setInterval(()=>{
+        console.log("Animate = %s", isAnimating);
+    },1000);
     myDropzone.on("sending", function (file) {
         // Show the total progress bar when upload starts
         document.querySelector("#total-progress").style.opacity = "1";
