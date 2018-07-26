@@ -22,6 +22,13 @@ $(function(){
         var overlay = $('div.overlay');
         overlay.insertBefore($('preview-outer'));
         $('div.preview-outer').css('display' , 'initial');
+
+        $('button[data-dz-remove].cancel').on('click', function () {
+            $('div.preview-outer').css({
+                display: 'none !important'
+            });
+            return false;
+        });
         // Hookup the start button
         file.previewElement.querySelector(".start").onclick = function () {
             myDropzone.enqueueFile(file);
@@ -55,10 +62,5 @@ $(function(){
     document.querySelector("#actions .cancel").onclick = function () {
         myDropzone.removeAllFiles(true);
     };
-
-    $('button[data-dz-remove].cancel').on('click' , function(){
-        $('div.preview-outer').css('display', 'none');
-        return false;
-    });
 
 });

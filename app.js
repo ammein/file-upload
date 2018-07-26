@@ -40,6 +40,6 @@ app.use((req,res)=>{
 });
 
 app.listen(port , '0.0.0.0' , function () {
-    console.log(`==================================================== \nServer started at \"${port}\" \n====================================================`);
-    console.log("Static file on : \n %s \n====================================================", staticLocation);
+    console.log("------\t%s\n------\thttp://localhost:%s\n", new Date().toISOString(), port);
+    console.log("Static file on : \n\t%s", staticLocation);
 })
