@@ -32,6 +32,6 @@ app.use((req,res)=>{
 });
 
 app.listen(port , '0.0.0.0' , function () {
-    console.log(`Server started at ${port}`);
-    console.log("Static file on ",staticLocation);
+    console.log(`Server started at \"${port}\"`);
+    console.log("Static file on : \n",staticLocation);
 })

@@ -2,13 +2,13 @@
 // DOM Ready
 $(function(){
     // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
+    console.log("I started");
     var previewNode = document.querySelector("#between");
     previewNode.id = "";
     var previewTemplate = previewNode.parentNode.innerHTML;
     previewNode.parentNode.removeChild(previewNode);
-    console.log("I started");
     var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
-        url: "/target-url", // Set the url
+        url: "/fileupload", // Set the url
         thumbnailWidth: 80,
         thumbnailHeight: 80,
         parallelUploads: 20,
@@ -19,6 +19,9 @@ $(function(){
     });
 
     myDropzone.on("addedfile", function (file) {
+        var overlay = $('div.overlay');
+        overlay.insertBefore($('preview-outer'));
+        $('div.preview-outer').css('display' , 'initial');
         // Hookup the start button
         file.previewElement.querySelector(".start").onclick = function () {
             myDropzone.enqueueFile(file);
@@ -51,5 +54,10 @@ $(function(){
     document.querySelector("#actions .cancel").onclick = function () {
         myDropzone.removeAllFiles(true);
     };
+
+    $('button[data-dz-remove].cancel').on('click' , function(){
+        $('div.preview-outer').css('display', 'none');
+        return false;
+    });
 
 });
