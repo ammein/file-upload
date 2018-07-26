@@ -82,6 +82,14 @@ $(function(){
         myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
     });
     $("button.cancel").on("click" , ()=>{
+        // To override inline style
+        $('div.preview-outer').removeAttr('style');
+        $('div.preview-outer').css({
+            display: 'none !important'
+        });
+        document.querySelectorAll('.overlay').forEach((item) => {
+            $(item).remove();
+        })
         myDropzone.removeAllFiles(true);
     });
 

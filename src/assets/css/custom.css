@@ -88,3 +88,7 @@ span.preview{
     width : 50px;
     z-index: 99999;
 }
+
+.button-area{
+    margin : 10px 10px;
+}
