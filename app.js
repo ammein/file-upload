@@ -1,10 +1,18 @@
+///<reference path="./node_modules/body-parser/*"/>
+
 const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
+const bodyParser = require('body-parser');
 var root = {
     root : './src/views'
 };
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended : true
+}));
 
 var staticLocation = path.join(__dirname, 'src');
 
@@ -22,7 +30,7 @@ app.get('/about' , (req,res)=>{
 
 app.post('/fileupload', (req, res) => {
     var file = req.body;
-    console.log(`File Upload :\n ${JSON.stringify(file,undefined,2)}`);
+    console.log(`File Upload :\n ${JSON.stringify({file},undefined,2)}`);
 });
 
 // 404 Handle
@@ -32,6 +40,6 @@ app.use((req,res)=>{
 });
 
 app.listen(port , '0.0.0.0' , function () {
-    console.log(`Server started at \"${port}\"`);
-    console.log("Static file on : \n",staticLocation);
+    console.log(`==================================================== \nServer started at \"${port}\" \n====================================================`);
+    console.log("Static file on : \n %s \n====================================================", staticLocation);
 })

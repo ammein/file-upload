@@ -5,11 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "nodemon -L --watch app.js --watch ./src/assets/css --watch ./src/assets/js --watch ./src/views"
+    "start": "nodemon -L --watch app.js --watch ./src/assets/css --watch ./src/assets/js --watch ./src/views"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3"
   }
 }
