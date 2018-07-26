@@ -5,5 +5,11 @@ html , body {
 .box-upload{
     width: 400px;
     height: 200px;
-    /* border : 1px black dashed; */
+    border : 1px black dashed;
+}
+
+.fileinput-button {
+    width: 400px;
+    height: 200px;
+    border : 1px black dashed;
 }
