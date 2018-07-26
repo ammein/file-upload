@@ -1,8 +1,8 @@
 /// <reference path="../js/dropzone.js" />
 // DOM Ready
 $(function(){
-
-    var previewNode = document.querySelector("#template");
+    // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
+    var previewNode = document.querySelector("#between");
     previewNode.id = "";
     var previewTemplate = previewNode.parentNode.innerHTML;
     previewNode.parentNode.removeChild(previewNode);
@@ -21,7 +21,6 @@ $(function(){
     myDropzone.on("addedfile", function (file) {
         // Hookup the start button
         file.previewElement.querySelector(".start").onclick = function () {
-            $('.start').addClass('fileinput-button');
             myDropzone.enqueueFile(file);
         };
     });
