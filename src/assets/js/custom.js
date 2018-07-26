@@ -25,6 +25,7 @@ $(function(){
         // Hookup the start button
         file.previewElement.querySelector(".start").onclick = function () {
             myDropzone.enqueueFile(file);
+            console.log("File type \n %s" , file);
         };
     });
 
