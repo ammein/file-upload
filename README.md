@@ -5,3 +5,10 @@ npm start
 ```
 
 >To be on development. This is for company's project testing
+---
+### Log File
+
+When you running npm , this will automatically file log in log.txt. To delete , simply :
+```cmd
+node app.js delete
+```
