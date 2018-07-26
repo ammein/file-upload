@@ -9,6 +9,12 @@ $(function(){
     previewNode.id = "";
     var previewTemplate = previewNode.parentNode.innerHTML;
     previewNode.parentNode.removeChild(previewNode);
+    var div = document.createElement('div');
+    var getWidth = $(".fileinput-button").css('width');
+    var getHeight = $(".fileinput-button").css('height');
+    var anotherDiv = div.cloneNode();
+    var dragEnterColor = 'rgba(158, 146, 255, 0.9)';
+    $(div).addClass('overlay');
     var isAnimating = false;
     var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
         url: "/fileupload", // Set the url
@@ -22,8 +28,6 @@ $(function(){
     });
 
     myDropzone.on("addedfile", function (file) {
-        var div = document.createElement('div');
-        $(div).addClass('overlay');
         $(div).insertBefore($('div.preview-outer'));
         $('div.preview-outer').css('display' , 'initial');
         // Hookup the start button
@@ -85,5 +89,29 @@ $(function(){
         });
         myDropzone.removeAllFiles(true);
     });
+    myDropzone.on("dragenter" , (event)=>{
+        $(anotherDiv).css('background-color', dragEnterColor);
+        $(anotherDiv).insertBefore($('div.preview-outer'));
+        $('.fileinput-button').css({
+            zIndex : 9999,
+            width: $(window).width(),
+            height: $(window).height(),
+            backgroundColor: 'white !important',
+            display : "block",
+            position: 'relative',
+            margin : '0 auto',
+            border: '3px black dashed'
+        });
+    });
+    // When user drop the file
+    myDropzone.on("drop" , (event)=>{
+        $(anotherDiv).remove();
+        $(".fileinput-button").css({
+            width : getWidth,
+            height : getHeight,
+            zIndex : 1,
+            margin : 'auto'
+        });
+    })
 
 });

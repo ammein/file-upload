@@ -11,9 +11,9 @@ html , body {
 .fileinput-button {
     width: 400px;
     height: 200px;
-    border : 1px black dashed !important;
-    background-color: transparent !important;
-    color : black !important;
+    border : 1px black dashed;
+    background-color: transparent;
+    color : black ;
     text-align: center;
     display: block;
 }
@@ -28,7 +28,7 @@ html , body {
     width: 80%;
     height: 80%;
     position: absolute;
-    z-index: 99999;
+    z-index: 10;
     background-color: white;
     margin: auto;
     top: 0;
@@ -78,6 +78,7 @@ table.blueTable tfoot td {
     position: absolute;
     background-color : rgba(0, 0, 0, 0.226);
     top : 0;
+    z-index: 1;
 }
 
 img[data-dz-thumbnail]{
