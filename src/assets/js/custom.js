@@ -28,13 +28,8 @@ $(function(){
     });
     var countObject = [];
     myDropzone.on("addedfile", function (file) {
+        countObject.push(file);
         var getButton = $('button.add-more').removeClass('inactive');
-        countObject.push(file)
-        console.log("Length" , countObject);
-        if(countObject[4]){
-            console.log("Execute counting");
-            $('button.add-more').addClass('inactive');
-        }
         getButton.insertAfter(file.previewElement);
         $(div).insertBefore($('div.preview-outer'));
         $('div.preview-outer').removeClass('inactive');
@@ -50,6 +45,18 @@ $(function(){
         file.previewElement.querySelector('button.delete').onclick = function(file){
             console.log("Clicked on previewElement");
             myDropzone.removeFile(file);
+        }
+    });
+
+    myDropzone.on("maxfilesreached" , (file)=>{
+        console.log("What is the file ? \n%s" , file);
+        $('button.add-more').addClass('inactive');
+    });
+
+    myDropzone.on("removedfile" , (file)=>{
+        if(countObject.length >= 4){
+            console.log("Execute remove file");
+            $('button.add-more').removeClass('inactive');
         }
     });
 
@@ -71,6 +78,7 @@ $(function(){
 
     // Hide the total progress bar when nothing's uploading anymore
     myDropzone.on("queuecomplete", function (progress) {
+        countObject = [];
         document.querySelector("#total-progress").style.opacity = "0";
     });
 
@@ -82,6 +90,7 @@ $(function(){
     });
     $("button.cancel").on("click" , ()=>{
         // To override inline style
+        countObject = [];
         $('div.preview-outer').addClass('inactive');
         document.querySelectorAll('.overlay').forEach((item) => {
             $(item).remove();
