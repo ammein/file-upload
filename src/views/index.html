@@ -16,8 +16,8 @@
 
         <div class="col-lg-7">
             <!-- The fileinput-button span is used to style the file input field as button -->
-            <form action="/fileupload" method="post" id="originalForm">
-                <span class="fileinput-button dz-clickable">
+            <form action="/fileupload" method="post" enctype="multipart/form-data" id="originalForm" class="fileinput-button dz-clickable">
+                <span>
                     <i class="glyphicon glyphicon-plus"></i>
                     <span>Add files...</span>
                 </span>
