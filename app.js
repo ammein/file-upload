@@ -28,9 +28,12 @@ app.get('/about' , (req,res)=>{
     res.sendFile('index.html' , root);
 });
 
-app.post('/fileupload', (req, res) => {
-    var file = req.params;
-    console.log(`File Upload :\n ${JSON.stringify(file , undefined , 2)}`);
+app.post('/api/banner', (req, res) => {
+    var file = req.body;
+    res.send({
+        file
+    });
+    console.log("File post",file);
 });
 
 // 404 Handle

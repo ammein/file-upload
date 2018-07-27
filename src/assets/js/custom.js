@@ -18,7 +18,8 @@ $(function(){
     $(div).addClass('overlay');
     var maxImageWidth = 3000;
     var maxImageHeight = 1940;
-    var myDropzone = new Dropzone('form[action=\"/fileupload\"]', { 
+    var myDropzone = new Dropzone('form[action=\"/api/banner\"]', {
+        url : '/api/banner',
         paramName : "image",
         thumbnailWidth: 80,
         thumbnailHeight: 80,
