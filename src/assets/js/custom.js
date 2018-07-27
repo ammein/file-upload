@@ -15,12 +15,12 @@ $(function(){
     var anotherDiv = div.cloneNode();
     var dragEnterColor = 'rgba(158, 146, 255, 0.9)';
     $(div).addClass('overlay');
-    var isAnimating = false;
-    var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
-        url: "/fileupload", // Set the url
+    var myDropzone = new Dropzone('form', { // Make the whole body a dropzone
+        // url: "/fileupload", // Set the url
         thumbnailWidth: 80,
         thumbnailHeight: 80,
         parallelUploads: 20,
+        maxFiles : 5,
         previewTemplate: previewTemplate,
         autoQueue: false, // Make sure the files aren't queued until manually added
         previewsContainer: "#previews", // Define the container to display the previews
@@ -35,6 +35,9 @@ $(function(){
         //     myDropzone.enqueueFile(file);
         //     console.log("File type \n %s" , file);
         // };
+        if (file.previewElement.previousElementSibling) {
+            $('form#formAdded').addClass('inactive');
+        }
 
         file.previewElement.querySelector('button.delete').onclick = function(file){
             console.log("Clicked on previewElement");
@@ -44,7 +47,6 @@ $(function(){
 
     // Update the total progress bar
     myDropzone.on("uploadprogress", function (progress) {
-        isAnimating = true;
         document.querySelector("#total-progress .progress-bar").style.width = progress + "%";
         console.log("Trigger the action");
         setTimeout(() => {
@@ -55,16 +57,11 @@ $(function(){
             document.querySelectorAll('.overlay').forEach((item) => {
                 $(item).remove();
             });
-            isAnimating = false;
         }, 2000);
     });
-    setInterval(()=>{
-        console.log("Animate = %s", isAnimating);
-    },1000);
     myDropzone.on("sending", function (file) {
         // Show the total progress bar when upload starts
         document.querySelector("#total-progress").style.opacity = "1";
-        // To override inline style
     });
 
     // Hide the total progress bar when nothing's uploading anymore
@@ -112,6 +109,18 @@ $(function(){
             zIndex : 1,
             margin : 'auto'
         });
-    })
+    });
+
+    var addDropzone;
+
+    $('button#addMore').on('click',()=>{
+        // var getFormAction = $('form').attr('action');
+        // console.log("What are the action ?",getFormAction);
+        var getForm = $('form#formAdded');
+        document.querySelectorAll('div.file-row').forEach((item)=>{
+            $(getForm).removeClass('inactive').insertAfter($(item).last());
+        });
+    });
+
 
 });

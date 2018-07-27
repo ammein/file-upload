@@ -16,10 +16,15 @@
 
         <div class="col-lg-7">
             <!-- The fileinput-button span is used to style the file input field as button -->
-            <span class="fileinput-button dz-clickable">
-                <i class="glyphicon glyphicon-plus"></i>
-                <span>Add files...</span>
-            </span>
+            <form action="/fileupload" method="post" id="originalForm">
+                <span class="fileinput-button dz-clickable">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>Add files...</span>
+                </span>
+            </form>
+            <form action="/fileupload" method="post" id="formAdded" class="form-added inactive fileinput-button dz-clickable">
+                Add your image here
+            </form>
         </div>
 
         <div class="col-lg-5" style="display:none">
@@ -39,7 +44,7 @@
             <div id="between" class="file-row inner-table">
                 <table class="blueTable">
                     <tbody>
-                        <tr>
+                        <tr id="appendRow" class="append-row">
                             <td class="column-1">
                                 <span class="preview">
                                     <img data-dz-thumbnail />
@@ -63,14 +68,9 @@
                         </tr>
                     </tbody>
                 </table>
-                <!-- <button class="btn btn-primary start">
-                    <i class="glyphicon glyphicon-upload"></i>
-                    <span>Start</span>
-                </button> -->
-                <!-- <button data-dz-remove class="btn btn-warning cancel">
-                    <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel</span>
-                </button> -->
+                </div>
+                <div class="button-addmore">
+                    <button id="addMore" class="add-more">Add More</button>
                 </div>
                 <div class="button-area">
                     <button type="reset" class="btn btn-warning cancel">
