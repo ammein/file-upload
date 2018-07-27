@@ -39,6 +39,22 @@ app.use((req,res)=>{
     res.sendFile('notFound.html' , root);
 });
 
+var myErrorHandler = ((err , req , res , next)=>{
+    if(err){
+        fs.appendFile('log.txt' , err , (err)=>{
+            if(err){
+                throw err;
+            }
+        })
+    }
+
+    next();
+})
+
+// app.configure(() => {
+//     app.use(myErrorHandler);
+// });
+
 app.listen(port , '0.0.0.0' , function () {
     var serverUp = `\n\n------\t${new Date().toISOString()}\n------\thttp://localhost:${port}\n`;
     console.log(serverUp);
