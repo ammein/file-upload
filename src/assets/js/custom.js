@@ -28,8 +28,11 @@ $(function(){
     });
 
     myDropzone.on("addedfile", function (file) {
+        var getButton = $('button.add-more').removeClass('inactive');
+        console.log("Next element", file.previewElement);
+        getButton.insertAfter(file.previewElement);
         $(div).insertBefore($('div.preview-outer'));
-        $('div.preview-outer').css('display' , 'initial');
+        $('div.preview-outer').removeClass('inactive');
         // Hookup the start button
         // file.previewElement.querySelector(".start").onclick = function () {
         //     myDropzone.enqueueFile(file);
@@ -50,10 +53,7 @@ $(function(){
         document.querySelector("#total-progress .progress-bar").style.width = progress + "%";
         console.log("Trigger the action");
         setTimeout(() => {
-            $('div.preview-outer').removeAttr('style');
-            $('div.preview-outer').css({
-                display: 'none !important'
-            });
+            $('div.preview-outer').addClass('inactive');
             document.querySelectorAll('.overlay').forEach((item) => {
                 $(item).remove();
             });
@@ -77,10 +77,7 @@ $(function(){
     });
     $("button.cancel").on("click" , ()=>{
         // To override inline style
-        $('div.preview-outer').removeAttr('style');
-        $('div.preview-outer').css({
-            display: 'none !important'
-        });
+        $('div.preview-outer').addClass('inactive');
         document.querySelectorAll('.overlay').forEach((item) => {
             $(item).remove();
         });

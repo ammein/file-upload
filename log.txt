@@ -791,3 +791,111 @@
  
  Static file on : 
 	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T03:57:59.919Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T03:58:02.325Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T03:58:07.160Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T03:58:30.716Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T03:59:42.597Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:00:09.285Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:00:16.699Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:04:12.859Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:04:48.613Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:04:58.374Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:05:43.124Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:06:07.314Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:06:14.250Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:06:52.521Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:07:04.530Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:07:09.021Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:07:36.718Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T04:07:40.158Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src

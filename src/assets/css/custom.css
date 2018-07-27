@@ -26,7 +26,7 @@ html , body {
 
 .preview-outer{
     width: 80%;
-    height: 80%;
+    height: auto;
     position: absolute;
     z-index: 10;
     background-color: white;
@@ -35,7 +35,7 @@ html , body {
     left: 0;
     right: 0;
     bottom: 0;
-    display: none;
+    display: table;
     padding : 20px;
     border-radius: 5px;
 }
@@ -113,11 +113,11 @@ span.preview{
 }
 
 .add-more {
-    position: absolute;
-    bottom: 20px;
-    width: 92%;
+    position: relative;
+    width: 100%;
     background-color: transparent;
     border: 1px black dashed;
+    margin-top: 35px;
 }
 
 .form-added{
