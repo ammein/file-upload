@@ -16,13 +16,13 @@
 
         <div class="col-lg-7">
             <!-- The fileinput-button span is used to style the file input field as button -->
-            <form action="/fileupload" method="post" enctype="multipart/form-data" id="originalForm" class="fileinput-button dz-clickable">
+            <form action="/fileupload" method="POST" enctype="multipart/form-data" id="originalForm" class="fileinput-button dz-clickable">
                 <span>
                     <i class="glyphicon glyphicon-plus"></i>
                     <span>Add files...</span>
                 </span>
             </form>
-            <form action="/fileupload" method="post" id="formAdded" class="form-added inactive fileinput-button dz-clickable">
+            <form action="/fileupload" method="POST" id="formAdded" class="form-added inactive fileinput-button dz-clickable">
                 <div class="vcenter">
                     <p class="text-center">
                         Add your image here
@@ -76,11 +76,11 @@
                 </table>
                 </div>
                 <div class="button-area">
-                    <button type="reset" class="btn btn-warning cancel">
+                    <button type="reset" class="btn cancel">
                         <i class="glyphicon glyphicon-ban-circle"></i>
                         <span>Cancel upload</span>
                     </button>
-                    <button type="submit" class="btn btn-primary start">
+                    <button type="submit" class="btn start">
                         <i class="glyphicon glyphicon-upload"></i>
                         <span>Start upload</span>
                     </button>

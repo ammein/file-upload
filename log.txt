@@ -11,3 +11,51 @@
  
  Static file on : 
 	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T07:54:23.521Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T07:55:17.148Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T07:55:46.298Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T07:55:57.448Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T07:56:01.435Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T07:56:15.385Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T07:56:26.933Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src
+
+------	2018-07-27T07:56:43.110Z
+------	http://localhost:3000
+ 
+ Static file on : 
+	C:\Users\Azmin\Desktop\file-upload\src

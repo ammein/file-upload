@@ -104,6 +104,11 @@ img[data-dz-thumbnail]{
 .inner-table {
     display: table;
     width: 100%;
+    margin: 15px 0 15px 0;
+    z-index:999999;
+    box-shadow: 0px 6px 21px #d6d6d6;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 span.preview{
@@ -115,6 +120,7 @@ span.preview{
     z-index: 0;
     position: absolute;
     height: 2px !important;
+    margin-top: 15px;
 }
 
 .button-area{
@@ -122,7 +128,34 @@ span.preview{
 }
 
 .start {
+    background-color: #27ae60;
+    border: medium none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Montserrat' , sans-serif;
+    outline: medium none;
+    padding: 11px 37px;
     float :right;
+}
+
+.cancel{
+    border: medium none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Montserrat',
+    sans-serif;
+    outline: medium none;
+    padding: 11px 37px;
 }
 
 .add-more {
