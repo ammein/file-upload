@@ -26,10 +26,15 @@ $(function(){
         previewsContainer: "#previews", // Define the container to display the previews
         clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
     });
-
+    var countObject = [];
     myDropzone.on("addedfile", function (file) {
         var getButton = $('button.add-more').removeClass('inactive');
-        console.log("Next element", file.previewElement);
+        countObject.push(file)
+        console.log("Length" , countObject);
+        if(countObject[4]){
+            console.log("Execute counting");
+            $('button.add-more').addClass('inactive');
+        }
         getButton.insertAfter(file.previewElement);
         $(div).insertBefore($('div.preview-outer'));
         $('div.preview-outer').removeClass('inactive');
